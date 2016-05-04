@@ -8,3 +8,6 @@ The hackathon will focus on reducing mosquito borne virus infections by analyzin
 
 ## How to contribute
 Follow the [how to contribute](CONTRIBUTE.md) guide to contribute to the Zika Hackathon repo from your fork or local git clone.
+
+## License
+Any new content, data or information that is not subject to a prior license is provided under the Apache Software License 2.0. See the file [LICENSE](LICENSE) for more information.
