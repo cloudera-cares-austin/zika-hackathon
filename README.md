@@ -5,3 +5,6 @@ This repository has been created in support of a Cloudera Cares Hackathon on May
 http://www.meetup.com/Cloudera-Cares/events/229135008/
 
 The hackathon will focus on reducing mosquito borne virus infections by analyzing data on bodies of water, mapping mosquito travel, temperature and historical virus analysis.
+
+## How to contribute
+Follow the [how to contribute](CONTRIBUTE.md) guide to contribute to the Zika Hackathon repo from your fork or local git clone.
