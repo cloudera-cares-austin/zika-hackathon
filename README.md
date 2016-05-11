@@ -19,6 +19,7 @@ Matt Holbrook https://github.com/holbrojm/zika - Sample jupyter notebooks with Z
 
 Shaun Carland - https://github.com/shauncarland/zikavirus - PAHO scrapper in Ruby
 
+Mosquito Occurrence Dataset - http://www.gbif.org/dataset/88e38292-f762-11e1-a439-00145eb45e9a - Walter Reed Biosystematics Unit, Smithsonian Institution
 
 
 ## How to contribute
