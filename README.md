@@ -21,6 +21,8 @@ Shaun Carland - https://github.com/shauncarland/zikavirus - PAHO scrapper in Rub
 
 Mosquito Occurrence Dataset - http://www.gbif.org/dataset/88e38292-f762-11e1-a439-00145eb45e9a - Walter Reed Biosystematics Unit, Smithsonian Institution
 
+Google Spreadsheet Scratchpad of additional datasets: https://goo.gl/Iazftq
+
 #Links
 https://docs.google.com/spreadsheets/d/1VlieTAcaATBRMw0t4IXKwOLnq11uS4SeJWUSipz_xns/edit?usp=sharing
 
