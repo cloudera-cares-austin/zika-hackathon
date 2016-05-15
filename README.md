@@ -21,6 +21,7 @@ Shaun Carland - https://github.com/shauncarland/zikavirus - PAHO scrapper in Rub
 
 Mosquito Occurrence Dataset - http://www.gbif.org/dataset/88e38292-f762-11e1-a439-00145eb45e9a - Walter Reed Biosystematics Unit, Smithsonian Institution
 
+Google Spreadsheet Scratchpad of additional datasets: https://goo.gl/Iazftq
 
 ## How to contribute
 Follow the [how to contribute](CONTRIBUTE.md) guide to contribute to the Zika Hackathon repo from your fork or local git clone.
