@@ -1,46 +1,46 @@
-,states,travel_cases,local_cases
-2,Arkansas,2,0
-3,California,40,0
-4,Colorado,2,0
-5,Connecticut,1,0
-6,Delaware,3,0
-7,District of Columbia,3,0
-8,Florida,95,0
-9,Georgia,13,0
-10,Hawaii,7,0
-11,Illinois,13,0
-12,Indiana,6,0
-13,Iowa,5,0
-14,Kansas,1,0
-15,Kentucky,5,0
-16,Louisiana,4,0
-17,Maine,2,0
-18,Maryland,17,0
-19,Massachusetts,10,0
-20,Michigan,3,0
-21,Minnesota,17,0
-22,Mississippi,3,0
-23,Missouri,3,0
-24,Montana,1,0
-25,Nebraska,2,0
-26,Nevada,2,0
-27,New Hampshire,3,0
-28,New Jersey,9,0
-29,New Mexico,1,0
-30,New York,89,0
-31,North Carolina,11,0
-32,Ohio,12,0
-33,Oklahoma,4,0
-34,Oregon,6,0
-35,Pennsylvania,17,0
-36,South Carolina,1,0
-37,Tennessee,2,0
-38,Texas,30,0
-39,Utah,2,0
-40,Vermont,1,0
-41,Virginia,13,0
-42,Washington,2,0
-43,West Virginia,6,0
-46,American Samoa,0,14
-47,Puerto Rico,2,629
-48,US Virgin Islands,1,15
+states,travel_cases,local_cases
+Arkansas,2,0
+California,40,0
+Colorado,2,0
+Connecticut,1,0
+Delaware,3,0
+District of Columbia,3,0
+Florida,95,0
+Georgia,13,0
+Hawaii,7,0
+Illinois,13,0
+Indiana,6,0
+Iowa,5,0
+Kansas,1,0
+Kentucky,5,0
+Louisiana,4,0
+Maine,2,0
+Maryland,17,0
+Massachusetts,10,0
+Michigan,3,0
+Minnesota,17,0
+Mississippi,3,0
+Missouri,3,0
+Montana,1,0
+Nebraska,2,0
+Nevada,2,0
+New Hampshire,3,0
+New Jersey,9,0
+New Mexico,1,0
+New York,89,0
+North Carolina,11,0
+Ohio,12,0
+Oklahoma,4,0
+Oregon,6,0
+Pennsylvania,17,0
+South Carolina,1,0
+Tennessee,2,0
+Texas,30,0
+Utah,2,0
+Vermont,1,0
+Virginia,13,0
+Washington,2,0
+West Virginia,6,0
+American Samoa,0,14
+Puerto Rico,2,629
+US Virgin Islands,1,15
