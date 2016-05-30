@@ -1,0 +1,82 @@
+---
+title: "Zika map"
+author: "Tim Keitt"
+date: "May 24, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache=TRUE)
+```
+
+## Introduction
+
+I recently attended a hackathon hosted by [Cloudera](http://www.cloudera.com), a Hadoop/Big-Data firm in Austion. The theme was Zika virus data. We started with some data from the CDC on infections. In this document, I illustrate how to map the data in [R](http://www.r-project.org/).
+
+This example was developed for my [UT Summer Statistics Institute](https://stat.utexas.edu/training/ssi) course entitled Geospatial Data Analysis in R.
+
+For other projects and software, visit [http://www.keittlab.org/](http://www.keittlab.org).
+
+## Preliminaries
+
+A short function to check for packages.
+
+```{r}
+check_package = function(pkg_name)
+  for (pkg in pkg_name)
+    if (!pkg %in% installed.packages())
+      install.packages(pkg, repos = "http://cran.rstudio.com/", verbose = FALSE)
+```
+
+First we'll download the data using Hadley's excellent [readr](http://github.com/hadley/readr) package.
+
+```{r}
+check_package("readr")
+zika_states = readr::read_csv("https://raw.githubusercontent.com/cloudera-cares-austin/zika-hackathon/master/data/CDC_May_2016_US.csv")
+head(zika_states)
+```
+
+How lets get the state boundaries from the 2010 US Census Tiger database.
+
+```{r}
+check_package("tigris")
+state_boundaries = tigris::states()
+tigris::plot(state_boundaries, col = "steelblue")
+```
+
+Not very pretty, so lets transform to [US National Atlas map projection](http://spatialreference.org/ref/epsg/2163/) and remove unneeded areas.
+
+```{r}
+check_package("sp")
+state_boundaries = subset(state_boundaries, ! NAME %in% c("Alaska", "Commonwealth of the Northern Mariana Islands", "United States Virgin Islands", "American Samoa", "Guam", "Hawaii"))
+sb_proj = sp::spTransform(state_boundaries, sp::CRS("+proj=laea +lat_0=45 +lon_0=-100 +x_0=0 +y_0=0 +a=6370997 +b=6370997 +units=m +no_defs"))
+tigris::plot(sb_proj, col = "steelblue")
+```
+
+Now we join the zika data to the state boundaries file. This just adds the columns from the zika data frame to the corresponding rows of the state boundaries spatial data frame.
+
+```{r}
+sb_zika = tigris::geo_join(sb_proj, zika_states, "NAME", "states")
+sb_zika$id = 1:nrow(sb_zika)
+```
+
+Let's see if we can plot it with ggplot. (Some pointer [here](https://github.com/hadley/ggplot2/wiki/plotting-polygon-shapefiles).)
+
+```{r}
+check_package(c("rgeos", "ggplot2", "plyr", "maptools"))
+library(ggplot2); library(maptools) # fixes bug in fortify
+zika_gg = plyr::join(fortify(sb_zika, region = "id"), sb_zika@data, by = "id")
+names(zika_gg)[1:2] = c("easting", "northing")
+ggplot(zika_gg) +
+  aes(easting, northing, group = group, fill = travel_cases) +
+  geom_polygon() +
+  coord_equal() +
+  ggtitle("CDC Zika Cases May 2016")
+```
+
+Let's save the data frame for reuse.
+
+```{r}
+rgdal::writeOGR(sb_zika, "zika_states.glm", "zika_states", "GML")
+```
